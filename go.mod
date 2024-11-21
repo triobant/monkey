@@ -1,3 +1,3 @@
-module github.com/triobant/monkey
+module monkey
 
 go 1.23.1
