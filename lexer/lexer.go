@@ -13,6 +13,10 @@ func New(input string) *Lexer {
     return l
 }
 
+func (l *Lexer) NextToken() token.Token {
+
+}
+
 func (l *Lexer) readChar() {
     if l.readPosition >= len(l.input) {
         l.ch = 0
