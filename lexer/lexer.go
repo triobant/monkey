@@ -13,6 +13,7 @@ func New(input string) *Lexer {
     return l
 }
 
+// Method to look at current char (l.ch) and to return a token depending on which char it is
 func (l *Lexer) NextToken() token.Token {
     var tok token.Token
 
@@ -52,6 +53,7 @@ func (l *Lexer) readChar() {
     l.readPosition += 1
 }
 
+// Small function to help with initalizing tokens
 func newToken(tokenType token.TokenType, ch byte) token.Token {
     return token.Token{Type: tokenType, Literal: string(ch)}
 }
