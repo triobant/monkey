@@ -1,5 +1,7 @@
 package lexer
 
+import "monkey/token"
+
 type Lexer struct {
     input           string
     position        int     // current position in input (points to current char)
