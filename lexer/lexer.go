@@ -62,6 +62,7 @@ func (l *Lexer) readChar() {
     l.readPosition += 1
 }
 
+// reads identifier and advances lexer's positions until non-letter char
 func (l *Lexer) readIdentifier() string {
     position := l.position
     for isLetter(l.ch) {
@@ -70,6 +71,8 @@ func (l *Lexer) readIdentifier() string {
     return l.input[position:l.position]
 }
 
+// Checks if given arg is a letter or _ ; other languages allow even ? and ! in identifiers
+// Changing this function has a large impact on the language
 func isLetter(ch byte) bool {
     return 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || ch == '_'
 }
