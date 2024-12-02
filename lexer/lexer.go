@@ -103,6 +103,15 @@ func (l *Lexer) readNumber() string {
     return l.input[position:l.position]
 }
 
+// similar to readChar - doesn't increment l.position and l.readPosition, only "peeks" ahead
+func (l *Lexer) peekChar() byte {
+    if l.readPosition >= len(l.input) {
+        return 0
+    } else {
+        return l.input[l.readPosition]
+    }
+}
+
 // Checks if given arg is a letter or _ ; other languages allow even ? and ! in identifiers
 // Changing this function has a large impact on the language
 func isLetter(ch byte) bool {
