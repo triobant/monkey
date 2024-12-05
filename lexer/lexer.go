@@ -54,16 +54,16 @@ func (l *Lexer) NextToken() token.Token {
         tok = newToken(token.GT, l.ch)
     case ';':
         tok = newToken(token.SEMICOLON, l.ch)
-    case '(':
-        tok = newToken(token.LPAREN, l.ch)
-    case ')':
-        tok = newToken(token.RPAREN, l.ch)
     case ',':
         tok = newToken(token.COMMA, l.ch)
     case '{':
         tok = newToken(token.LBRACE, l.ch)
     case '}':
         tok = newToken(token.RBRACE, l.ch)
+    case '(':
+        tok = newToken(token.LPAREN, l.ch)
+    case ')':
+        tok = newToken(token.RPAREN, l.ch)
     case 0:
         tok.Literal = ""
         tok.Type = token.EOF
@@ -75,6 +75,7 @@ func (l *Lexer) NextToken() token.Token {
         } else if isDigit(l.ch) {
             tok.Type = token.INT
             tok.Literal = l.readNumber()
+            return tok
         } else {
             tok = newToken(token.ILLEGAL, l.ch)
         }
@@ -100,6 +101,15 @@ func (l *Lexer) readChar() {
     l.readPosition += 1
 }
 
+// similar to readChar - doesn't increment l.position and l.readPosition, only "peeks" ahead
+func (l *Lexer) peekChar() byte {
+    if l.readPosition >= len(l.input) {
+        return 0
+    } else {
+        return l.input[l.readPosition]
+    }
+}
+
 // reads identifier and advances lexer's positions until non-letter char
 func (l *Lexer) readIdentifier() string {
     position := l.position
@@ -115,15 +125,6 @@ func (l *Lexer) readNumber() string {
         l.readChar()
     }
     return l.input[position:l.position]
-}
-
-// similar to readChar - doesn't increment l.position and l.readPosition, only "peeks" ahead
-func (l *Lexer) peekChar() byte {
-    if l.readPosition >= len(l.input) {
-        return 0
-    } else {
-        return l.input[l.readPosition]
-    }
 }
 
 // Checks if given arg is a letter or _ ; other languages allow even ? and ! in identifiers
