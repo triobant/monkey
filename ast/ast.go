@@ -35,3 +35,8 @@ type LetStatement struct {
 
 func (ls *LetStatement) statementNode()         {}
 func (ls *LetStatement) TokenLiteral()          { return ls.Token.Literal() }
+
+type Identifier struct {
+    Token   token.Token // the token.IDENT token
+    Value   string
+}
