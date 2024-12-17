@@ -22,3 +22,8 @@ func New(l *lexer.Lexer) *Parser {
 
     return p
 }
+
+func (p *Parser) nextToken() {
+    p.curToken = p.peekToken
+    p.peekToken = p.l.NextToken()
+}
