@@ -32,4 +32,11 @@ let foobar = 838383;
         {"y"},
         {"foobar"},
     }
+
+    for i, tt := range tests {
+        stmt := program.Statements[i]
+        if !testLetStatement(t, stmt, tt.expectedIdentifier) {
+            return
+        }
+    }
 }
