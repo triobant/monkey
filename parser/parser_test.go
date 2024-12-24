@@ -40,3 +40,6 @@ let foobar = 838383;
         }
     }
 }
+
+func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
+}
