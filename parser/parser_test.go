@@ -42,4 +42,10 @@ let foobar = 838383;
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
+    if s.TokenLiteral() != "let" {
+        stmt := program.Statements[i]
+        if !testLetStatement(t, stmt, tt.expectedIdentifier) {
+            return
+        }
+    }
 }
