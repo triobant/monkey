@@ -51,3 +51,6 @@ func (p *Parser) parseStatement() ast.Statement {
         return nil
     }
 }
+
+func (p *Parser) parseLetStatement() *ast.LetStatement {
+}
