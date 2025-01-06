@@ -70,3 +70,6 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
+
+func (p *Parser) peekTokenIs(t token.TokenType) bool {
+}
