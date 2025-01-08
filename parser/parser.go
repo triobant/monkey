@@ -76,4 +76,10 @@ func (p *Parser) peekTokenIs(t token.TokenType) bool {
 }
 
 func (p *Parser) expectPeek(t token.TokenType) bool {
+    if p.peekTokenIs(t) {
+        p.nextToken()
+        return true
+    } else {
+        return false
+    }
 }
