@@ -4,6 +4,7 @@ import (
     "monkey/ast"
     "monkey/lexer"
     "monkey/token"
+    "fmt"
 )
 
 type Parser struct {
