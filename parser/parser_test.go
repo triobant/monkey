@@ -93,4 +93,9 @@ return 993322;
 
     program := p.ParseProgram()
     checkParserErrors(t, p)
+
+    if len(program.Statements) != 3 {
+        t.Fatalf("program.Statements does not contain 3 statements. got=%d",
+            len(program.Statements))
+    }
 }
