@@ -80,3 +80,6 @@ func checkParserErrors(t *testing.T, p *Parser) {
     }
     t.FailNow()
 }
+
+func TestReturnStatement(t *testing.T) {
+}
