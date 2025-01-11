@@ -81,5 +81,5 @@ func checkParserErrors(t *testing.T, p *Parser) {
     t.FailNow()
 }
 
-func TestReturnStatement(t *testing.T) {
+func TestReturnStatements(t *testing.T) {
 }
