@@ -107,7 +107,7 @@ return 993322;
         }
         if returnStmt.TokenLiteral() != "return" {
             t.Errorf("returnStmt.TokenLiteral not 'return', got %q",
-                returnStmt.TokenLiteral)
+                returnStmt.TokenLiteral())
         }
     }
 }
