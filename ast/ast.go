@@ -32,6 +32,9 @@ func (p *Program) TokenLiteral() string {
     }
 }
 
+func (p *Program) String() string {
+}
+
 // Statements
 type LetStatement struct {
     Token   token.Token // the token.LET token
