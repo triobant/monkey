@@ -78,3 +78,6 @@ func (es *ExpressionStatement) TokenLiteral() string { return es.Token.Literal }
 
 func (ls *LetStatement) String() string {
 }
+
+func (rs *ReturnStatement) String() string {
+}
