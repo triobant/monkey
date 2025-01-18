@@ -77,7 +77,9 @@ func (es *ExpressionStatement) statementNode()  {}
 func (es *ExpressionStatement) TokenLiteral() string { return es.Token.Literal }
 
 func (ls *LetStatement) String() string {
+    var out bytes.Buffer
 }
 
 func (rs *ReturnStatement) String() string {
+    var out bytes.Buffer
 }
