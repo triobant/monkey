@@ -94,4 +94,14 @@ func (ls *LetStatement) String() string {
 
 func (rs *ReturnStatement) String() string {
     var out bytes.Buffer
+
+    out.WriteString(rs.TokenLiteral() + " ")
+
+    if rs.ReturnValue != nil {
+        out.WriteString(rs.ReturnValue.String())
+    }
+
+    out.WriteString(";")
+
+    return out.String()
 }
