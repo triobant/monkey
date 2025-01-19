@@ -105,3 +105,6 @@ func (rs *ReturnStatement) String() string {
 
     return out.String()
 }
+
+func (es *ExpressionStatement) String() string {
+}
