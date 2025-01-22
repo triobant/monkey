@@ -107,6 +107,9 @@ func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
     return stmt
 }
 
+func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
