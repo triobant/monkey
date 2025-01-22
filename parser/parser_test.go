@@ -113,4 +113,10 @@ return 993322;
 }
 
 func TestIdentifierExpression(t *testing.T) {
+    input := "foobar;"
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, P)
 }
