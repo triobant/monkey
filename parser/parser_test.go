@@ -111,3 +111,6 @@ return 993322;
         }
     }
 }
+
+func TestIdentifierExpression(t *testing.T) {
+}
