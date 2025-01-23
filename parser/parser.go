@@ -131,6 +131,7 @@ func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
 }
 
 func (p *Parser) parseExpression(precedence int) ast.Expression {
+    prefix := p.prefixParseFns[p.curToken.Type]
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
