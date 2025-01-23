@@ -130,6 +130,9 @@ func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
     return stmt
 }
 
+func (p *Parser) parseExpression(precedence int) ast.Expression {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
