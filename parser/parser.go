@@ -135,6 +135,9 @@ func (p *Parser) parseExpression(precedence int) ast.Expression {
     if prefix == nil {
         return nil
     }
+    leftExp := prefix()
+
+    return leftExp
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
