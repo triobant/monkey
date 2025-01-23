@@ -160,3 +160,6 @@ func (p *Parser) expectPeek(t token.TokenType) bool {
         return false
     }
 }
+
+func (p *Parser) parseIdentifier() ast.Expression {
+}
