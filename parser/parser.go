@@ -7,6 +7,17 @@ import (
     "fmt"
 )
 
+const (
+    _ int = iota
+    LOWEST
+    EQUALS      // ==
+    LESSGREATER // > or <
+    SUM         // +
+    PRODUCT     // *
+    PREFIX      // -X or !X
+    CALL        // myFunction(X)
+)
+
 type Parser struct {
     l           *lexer.Lexer
     errors      []string
