@@ -120,7 +120,7 @@ func TestIdentifierExpression(t *testing.T) {
     program := p.ParseProgram()
     checkParserErrors(t, p)
 
-    if Len(program.Statements) != 1 {
+    if len(program.Statements) != 1 {
         t.Fatalf("program has not enough statements. got=%d",
             len(program.Statements))
     }
