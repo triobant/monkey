@@ -165,4 +165,7 @@ func TestIntegerLiteralExpression(t *testing.T) {
     if !ok {
         t.Fatalf("exp not *ast.IntegerLiteral. got=%T", stmt.Expression)
     }
+    if literal.Value != 5 {
+        t.Fatalf("literal.Value not %d. got=%d", 5, literal.Value)
+    }
 }
