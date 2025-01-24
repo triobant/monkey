@@ -142,3 +142,6 @@ func TestIdentifierExpression(t *testing.T) {
             ident.TokenLiteral())
     }
 }
+
+func TestIntegerLiteralExpression(t *testing.T) {
+}
