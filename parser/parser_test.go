@@ -144,4 +144,10 @@ func TestIdentifierExpression(t *testing.T) {
 }
 
 func TestIntegerLiteralExpression(t *testing.T) {
+    input := "5;"
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
