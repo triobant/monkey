@@ -112,3 +112,8 @@ func (es *ExpressionStatement) String() string {
 
     return ""
 }
+
+type IntegerLiteral struct {
+    Token   token.Token
+    Value   int64
+}
