@@ -152,6 +152,11 @@ func (p *Parser) parseIntegerLiteral() ast.Expression {
     lit := &ast.integerliteral{token: p.curtoken}
 
     value, err := strconv.ParseInt(p.curToken.Literal, 0, 64)
+    if err != nil {
+        msg := fmt.Sprintf("could not parse %q as integer", p.curToken.Literal)
+        p.errors = append(p.errors, msg)
+        return nil
+    }
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
