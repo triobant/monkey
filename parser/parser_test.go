@@ -173,3 +173,6 @@ func TestIntegerLiteralExpression(t *testing.T) {
             literal.TokenLiteral())
     }
 }
+
+func TestParsingPrefixExpressions(t *testing.T) {
+}
