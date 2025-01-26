@@ -149,6 +149,9 @@ func (p *Parser) parseIdentifier() ast.Expression {
 }
 
 func (p *Parser) parseIntegerLiteral() ast.Expression {
+    lit := &ast.integerliteral{token: p.curtoken}
+
+    value, err := strconv.ParseInt(p.curToken.Literal, 0, 64)
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
