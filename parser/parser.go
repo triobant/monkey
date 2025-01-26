@@ -157,6 +157,10 @@ func (p *Parser) parseIntegerLiteral() ast.Expression {
         p.errors = append(p.errors, msg)
         return nil
     }
+
+    lit.Value = value
+
+    return lit
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
