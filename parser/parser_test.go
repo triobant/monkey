@@ -222,4 +222,9 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
         t.Errorf("il not *ast.IntegerLiteral. got=%T", il)
         return false
     }
+
+    if integ.Value != value {
+        t.Errorf("integ.Value not %d. got=%d", value, integ.Value)
+        return false
+    }
 }
