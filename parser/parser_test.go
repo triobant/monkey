@@ -2,6 +2,7 @@ package parser
 
 import (
     "testing"
+    "fmt"
     "monkey/ast"
     "monkey/lexer"
 )
