@@ -233,4 +233,6 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
             integ.TokenLiteral())
         return false
     }
+
+    return true
 }
