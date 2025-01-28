@@ -188,7 +188,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
     for _, tt := range prefixTests {
         l := lexer.New(tt.input)
         p := New(l)
-        program := p.parseProgram()
+        program := p.ParseProgram()
         checkParserErrors(t, p)
 
         if len(program.Statements) != 1 {
