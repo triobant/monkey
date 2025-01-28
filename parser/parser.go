@@ -172,6 +172,9 @@ func (p *Parser) parseIntegerLiteral() ast.Expression {
     return lit
 }
 
+func (p *Parser) parsePrefixExpression() ast.Expression {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
