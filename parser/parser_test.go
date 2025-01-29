@@ -284,5 +284,9 @@ func TestParsingInfixExpressions(t *testing.T) {
             tt.Fatalf("exp.Operator is not '%s'. got=%s",
                 tt.operator, exp.Operator)
         }
+
+        if !testIntegerLiteral(t, exp.Right, tt.rightValue) {
+            return
+        }
     }
 }
