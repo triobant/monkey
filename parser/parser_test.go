@@ -253,4 +253,11 @@ func TestParsingInfixExpressions(t *testing.T) {
         {"5 == 5;", 5, "==", 5},
         {"5 != 5;", 5, "!=", 5},
     }
+
+    for _, tt := range infixTests {
+        l := lexer.New(tt.input)
+        p := New(l)
+        program := p.ParseProgram()
+        checkParserErrors(t, p)
+    }
 }
