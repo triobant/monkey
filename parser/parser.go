@@ -164,6 +164,9 @@ func (p *Parser) parseExpression(precedence int) ast.Expression {
     return leftExp
 }
 
+func (p *Parser) peekPrecedence() int {
+}
+
 func (p *Parser) parseIdentifier() ast.Expression {
     return &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal}
 }
