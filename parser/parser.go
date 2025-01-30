@@ -19,6 +19,9 @@ const (
     CALL        // myFunction(X)
 )
 
+var precedences = map[token.TokenType]int{
+}
+
 type Parser struct {
     l           *lexer.Lexer
     errors      []string
