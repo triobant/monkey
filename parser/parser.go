@@ -172,6 +172,10 @@ func (p *Parser) peekPrecedence() int {
     return LOWEST
 }
 
+func (p *Parser) curPrecedence() int {
+
+}
+
 func (p *Parser) parseIdentifier() ast.Expression {
     return &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal}
 }
