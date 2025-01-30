@@ -165,6 +165,11 @@ func (p *Parser) parseExpression(precedence int) ast.Expression {
 }
 
 func (p *Parser) peekPrecedence() int {
+    if p, ok := precedences[p.peekToken.Type]; ok {
+        return p
+    }
+
+    return LOWEST
 }
 
 func (p *Parser) parseIdentifier() ast.Expression {
