@@ -228,6 +228,8 @@ func (p *Parser) parseInfixExpression(left ast.Expression) ast.Expression {
         Operator:   p.curToken.Literal,
         Left:       left,
     }
+
+    precedence := p.curPrecedence()
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
