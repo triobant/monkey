@@ -223,6 +223,11 @@ func (p *Parser) parsePrefixExpression() ast.Expression {
 }
 
 func (p *Parser) parseInfixExpression(left ast.Expression) ast.Expression {
+    expression := &ast.Expression{
+        Token:      p.curToken,
+        Operator:   p.curToken.Literal,
+        Left:       left,
+    }
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
