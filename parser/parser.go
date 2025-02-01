@@ -58,6 +58,8 @@ func New(l *lexer.Lexer) *Parser {
     p.registerPrefix(token.BANG, p.parsePrefixExpression)
     p.registerPrefix(token.MINUS, p.parsePrefixExpression)
 
+    p.infixParseFns = make(map[token.TokenType]infixParseFn)
+
     // Read two tokens, so curToken and peekToken are both set
     p.nextToken()
     p.nextToken()
