@@ -30,3 +30,5 @@ func untrace(msg string) {
     tracePrint("END " + msg)
     decIdent()
 }
+
+// example go test -v -run TestOperatorPrecedenceParsing ./parser
