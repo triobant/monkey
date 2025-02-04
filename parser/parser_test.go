@@ -372,4 +372,6 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
             ident.TokenLiteral())
             return false
     }
+
+    return true
 }
