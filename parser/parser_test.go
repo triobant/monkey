@@ -366,4 +366,10 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
         t.Errorf("ident.Value not %s. got=%s", value, ident.Value)
         return false
     }
+
+    if ident.TokenLiteral() != value {
+        t.Errorf("ident.TokenLiteral not %s. got=%s", value,
+            ident.TokenLiteral())
+            return false
+    }
 }
