@@ -354,3 +354,6 @@ func TestOperatorPrecedenceParsing(t *testing.T) {
         }
     }
 }
+
+func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
+}
