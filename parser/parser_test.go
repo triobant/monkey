@@ -400,4 +400,9 @@ func testInfixExpression(
     operator string,
     right interface{}
 ) bool {
+    opExp, ok := exp.(*ast.InfixExpression)
+    if !ok {
+        t.Errorf("exp is not ast.InfixExpression. got=%T(%s)", exp, exp)
+        return false
+    }
 }
