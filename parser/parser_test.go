@@ -406,7 +406,7 @@ func testInfixExpression(
         return false
     }
 
-    if !testLiteralExpression(t, opExp.left, left) {
+    if !testLiteralExpression(t, opExp.Left, left) {
         return false
     }
 
@@ -414,4 +414,10 @@ func testInfixExpression(
         t.Errorf("opExp is not '%s'. got=%q", operator, opExp.Operator)
         return false
     }
+
+    if !testLiteralExpression(t, opExp.Right, right) {
+        return false
+    }
+
+    return true
 }
