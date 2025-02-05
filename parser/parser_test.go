@@ -375,3 +375,10 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
 
     return true
 }
+
+func testLiteralExpression(
+    t *testing.T,
+    exp ast.Expression,
+    expected interface{},
+) bool {
+}
