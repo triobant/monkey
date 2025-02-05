@@ -392,3 +392,12 @@ func testLiteralExpression(
     t.Errorf("type of exp not handled. got=%T", exp)
     return false
 }
+
+func testInfixExpression(
+    t *testing.T,
+    exp ast.Expression,
+    left interface{},
+    operator string,
+    right interface{}
+) bool {
+}
