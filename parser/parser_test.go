@@ -405,4 +405,8 @@ func testInfixExpression(
         t.Errorf("exp is not ast.InfixExpression. got=%T(%s)", exp, exp)
         return false
     }
+
+    if !testLiteralExpression(t, opExp.left, left) {
+        return false
+    }
 }
