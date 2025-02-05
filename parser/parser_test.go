@@ -409,4 +409,9 @@ func testInfixExpression(
     if !testLiteralExpression(t, opExp.left, left) {
         return false
     }
+
+    if opExp.Operator != operator {
+        t.Errorf("opExp is not '%s'. got=%q", operator, opExp.Operator)
+        return false
+    }
 }
