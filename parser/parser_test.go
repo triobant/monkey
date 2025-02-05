@@ -1,10 +1,10 @@
 package parser
 
 import (
-    "testing"
     "fmt"
     "monkey/ast"
     "monkey/lexer"
+    "testing"
 )
 
 func TestLetStatements(t *testing.T) {
