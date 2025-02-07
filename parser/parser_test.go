@@ -445,19 +445,6 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
     return true
 }
 
-func checkParserErrors(t *testing.T, p *Parser) {
-    errors := p.Errors()
-    if len(errors) == 0 {
-        return
-    }
-
-    t.Errorf("parser has %d errors", len(errors))
-    for _, msg := range errors {
-        t.Errorf("parser error: %q", msg)
-    }
-    t.FailNow()
-}
-
 func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
     ident, ok := exp.(*ast.Identifier)
     if !ok {
@@ -477,4 +464,17 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
     }
 
     return true
+}
+
+func checkParserErrors(t *testing.T, p *Parser) {
+    errors := p.Errors()
+    if len(errors) == 0 {
+        return
+    }
+
+    t.Errorf("parser has %d errors", len(errors))
+    for _, msg := range errors {
+        t.Errorf("parser error: %q", msg)
+    }
+    t.FailNow()
 }
