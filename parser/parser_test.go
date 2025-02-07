@@ -21,7 +21,6 @@ func TestLetStatements(t *testing.T) {
     for _, tt := range tests {
         l := lexer.New(tt.input)
         p := New(l)
-
         program := p.ParseProgram()
         checkParserErrors(t, p)
 
@@ -188,9 +187,9 @@ func TestParsingPrefixExpressions(t *testing.T) {
 func TestParsingInfixExpressions(t *testing.T) {
     infixTests := []struct {
         input       string
-        leftValue   int64
+        leftValue   interface{}
         operator    string
-        rightValue  int64
+        rightValue  interface{}
     }{
         {"5 + 5;", 5, "+", 5},
         {"5 - 5;", 5, "-", 5},
