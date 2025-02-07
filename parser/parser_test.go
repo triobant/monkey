@@ -200,6 +200,17 @@ func TestParsingInfixExpressions(t *testing.T) {
         {"5 < 5;", 5, "<", 5},
         {"5 == 5;", 5, "==", 5},
         {"5 != 5;", 5, "!=", 5},
+        {"foobar + barfoo;", "foobar", "+", "barfoo"},
+        {"foobar - barfoo;", "foobar", "-", "barfoo"},
+        {"foobar * barfoo;", "foobar", "*", "barfoo"},
+        {"foobar / barfoo;", "foobar", "/", "barfoo"},
+        {"foobar > barfoo;", "foobar", ">", "barfoo"},
+        {"foobar < barfoo;", "foobar", "<", "barfoo"},
+        {"foobar == barfoo;", "foobar", "==", "barfoo"},
+        {"foobar != barfoo;", "foobar", "!=", "barfoo"},
+        {"true == true", true, "==", true},
+        {"true != true", true, "!=", false},
+        {"false == false", false, "==", false},
     }
 
     for _, tt := range infixTests {
