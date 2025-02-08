@@ -165,3 +165,5 @@ type Boolean struct {
     Token   token.Token
     Value   bool
 }
+
+func (b *Boolean) expressionNode()  {}
