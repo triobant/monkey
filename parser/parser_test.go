@@ -143,7 +143,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
     prefixTests := []struct {
         input       string
         operator    string
-        Value       interface{}
+        value       interface{}
     }{
         {"!5;", "!", 5},
         {"-15;", "-", 15},
@@ -178,7 +178,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
             t.Fatalf("exp.Operator is not '%s'. got=%s",
                 tt.operator, exp.Operator)
         }
-        if !testIntegerLiteral(t, exp.Right, tt.integerValue) {
+        if !testIntegerLiteral(t, exp.Right, tt.value) {
             return
         }
     }
