@@ -383,7 +383,7 @@ func testInfixExpression(
     exp ast.Expression,
     left interface{},
     operator string,
-    right interface{}
+    right interface{},
 ) bool {
     opExp, ok := exp.(*ast.InfixExpression)
     if !ok {
