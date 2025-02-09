@@ -363,7 +363,7 @@ func TestBooleanExpression(t *testing.T) {
 
     for _, tt := range tests {
         l := lexer.New(tt.input)
-        p := New(.)
+        p := New(l)
         program := p.ParseProgram()
         checkParserErrors(t, p)
 
