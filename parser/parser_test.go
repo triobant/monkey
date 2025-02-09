@@ -353,6 +353,13 @@ func TestOperatorPrecedenceParsing(t *testing.T) {
 }
 
 func TestBooleanExpression(t *testing.T) {
+    tests := []struct {
+        input           string
+        expectedBoolean bool
+    }{
+        {"true;", true},
+        {"false;", false},
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
