@@ -366,6 +366,11 @@ func TestBooleanExpression(t *testing.T) {
         p := New(.)
         program := p.ParseProgram()
         checkParserErrors(t, p)
+
+        if len(program.Statements) != 1 {
+            t.Fatalf("program has not enough statements. got=%d",
+                len(program.Statements))
+        }
     }
 }
 
