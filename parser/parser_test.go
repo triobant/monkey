@@ -360,6 +360,13 @@ func TestBooleanExpression(t *testing.T) {
         {"true;", true},
         {"false;", false},
     }
+
+    for _, tt := range tests {
+        l := lexer.New(tt.input)
+        p := New(.)
+        program := p.ParseProgram()
+        checkParserErrors(t, p)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
