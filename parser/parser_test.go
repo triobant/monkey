@@ -377,6 +377,15 @@ func TestBooleanExpression(t *testing.T) {
             t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%T",
                 program.Statements[0])
         }
+
+        boolean, ok := stmt.Expression.(*ast.Boolean)
+        if !ok {
+            t.Fatalf("exp not *ast.Boolean. got=%T", stmt.Expression)
+        }
+        if boolean.Value != tt.expectedBoolean {
+            t.Fatalf("boolean.Value not %t. got=%t", tt.expectedBoolean,
+                boolean.Value)
+        }
     }
 }
 
