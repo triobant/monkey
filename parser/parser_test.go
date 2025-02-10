@@ -506,6 +506,10 @@ func testIdentifier(t *testing.T, exp ast.Expression, value string) bool {
 }
 
 func testBooleanLiteral(t *testing.T, exp ast.Expression, value bool) bool {
+    bo, ok := exp.(*ast.Boolean)
+    if !ok {
+        t.Errorf("exp not *ast.Boolean. got=%T", exp)
+    }
 }
 
 func checkParserErrors(t *testing.T, p *Parser) {
