@@ -510,6 +510,11 @@ func testBooleanLiteral(t *testing.T, exp ast.Expression, value bool) bool {
     if !ok {
         t.Errorf("exp not *ast.Boolean. got=%T", exp)
     }
+
+    if bo.Value != value {
+        t.Errorf("bo.Value not %t. got=%t", value, bo.Value)
+        return false
+    }
 }
 
 func checkParserErrors(t *testing.T, p *Parser) {
