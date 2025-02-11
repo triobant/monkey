@@ -270,6 +270,15 @@ func (p *Parser) parseBoolean() ast.Expression {
 }
 
 func (p *Parser) parseGroupedExpression() ast.Expression {
+    p.nextToken()
+
+    exp := p.parseExpression(LOWEST)
+
+    if !p.expectPeek(token.RPAREN) {
+        return nil
+    }
+
+    return exp
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
