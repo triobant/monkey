@@ -70,16 +70,6 @@ func (ls *LetStatement) String() string {
     return out.String()
 }
 
-
-type Identifier struct {
-    Token   token.Token // the token.IDENT token
-    Value   string
-}
-
-func (i *Identifier) expressionNode()      {}
-func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
-func (i *Identifier) String() string { return i.Value }
-
 type ReturnStatement struct {
     Token       token.Token // the 'return' token
     ReturnValue Expression
@@ -100,6 +90,15 @@ func (rs *ReturnStatement) String() string {
 
     return out.String()
 }
+
+type Identifier struct {
+    Token   token.Token // the token.IDENT token
+    Value   string
+}
+
+func (i *Identifier) expressionNode()      {}
+func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
+func (i *Identifier) String() string { return i.Value }
 
 type ExpressionStatement struct {
     Token       token.Token // the first token of the expression
