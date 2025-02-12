@@ -91,15 +91,6 @@ func (rs *ReturnStatement) String() string {
     return out.String()
 }
 
-type Identifier struct {
-    Token   token.Token // the token.IDENT token
-    Value   string
-}
-
-func (i *Identifier) expressionNode()      {}
-func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
-func (i *Identifier) String() string { return i.Value }
-
 type ExpressionStatement struct {
     Token       token.Token // the first token of the expression
     Expression  Expression
@@ -114,6 +105,16 @@ func (es *ExpressionStatement) String() string {
 
     return ""
 }
+
+// Expressions
+type Identifier struct {
+    Token   token.Token // the token.IDENT token
+    Value   string
+}
+
+func (i *Identifier) expressionNode()      {}
+func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
+func (i *Identifier) String() string { return i.Value }
 
 type IntegerLiteral struct {
     Token   token.Token
