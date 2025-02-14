@@ -404,8 +404,8 @@ func TestIfExpression(t *testing.T) {
 
     stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
     if !ok {
-        t.Fatalf("stmt.Expression is not ast.IfExpression. got=%T",
-            stmt.Expression)
+        t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%T",
+            program.Statements[0])
     }
 }
 
