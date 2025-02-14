@@ -106,6 +106,11 @@ func (es *ExpressionStatement) String() string {
     return ""
 }
 
+type BlockStatement struct {
+    Token       token.Token // the { token
+    Statements  []Statement
+}
+
 // Expressions
 type Identifier struct {
     Token   token.Token // the token.IDENT token
