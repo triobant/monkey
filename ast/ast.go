@@ -172,3 +172,10 @@ func (ie *InfixExpression) String() string {
 
     return out.String()
 }
+
+type IfExpression struct {
+    Token       token.Token // The 'if' token
+    Condition   Expression
+    Consequence *BlockStatement
+    Alternative *BlockStatement
+}
