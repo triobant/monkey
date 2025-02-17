@@ -461,6 +461,10 @@ func TestIfElseExpression(t *testing.T) {
     if !ok {
         t.Fatalf("stmt.Expression is not ast.IfExpression. got=%T", stmt.Expression)
     }
+
+    if !testInfixExpression(t, exp.Condition, "x", "<", "y") {
+        return
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
