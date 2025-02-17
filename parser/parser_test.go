@@ -465,6 +465,11 @@ func TestIfElseExpression(t *testing.T) {
     if !testInfixExpression(t, exp.Condition, "x", "<", "y") {
         return
     }
+
+    if len(exp.Consequence.Statements) != 1 {
+        t.Errorf("consequence is not 1 statements. got=%d\n",
+            len(exp.Consequence.Statements))
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
