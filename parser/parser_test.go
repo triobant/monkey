@@ -470,6 +470,12 @@ func TestIfElseExpression(t *testing.T) {
         t.Errorf("consequence is not 1 statements. got=%d\n",
             len(exp.Consequence.Statements))
     }
+
+    consequence, ok := exp.Consequence.Statements[0].(*ast.ExpressionStatement)
+    if !ok {
+        t.Fatalf("Statements[0] is not ast.ExpressionStatement. got=%T",
+            exp.Consequence.Statements[0])
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
