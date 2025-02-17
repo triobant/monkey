@@ -480,6 +480,11 @@ func TestIfElseExpression(t *testing.T) {
     if !testIdentifier(t, consequence.Expression, "x") {
         return
     }
+
+    if len(exp.Alternative.Statements) != 1 {
+        t.Errorf("exp.Alternative.Statements does not contain 1 statements. got=%d\n",
+            len(exp.Alternative.Statements))
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
