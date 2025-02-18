@@ -282,6 +282,9 @@ func (p *Parser) parseGroupedExpression() ast.Expression {
     return exp
 }
 
+func (p *Parser) parseIfExpression() ast.Expression {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
