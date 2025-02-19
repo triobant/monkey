@@ -283,6 +283,11 @@ func (p *Parser) parseGroupedExpression() ast.Expression {
 }
 
 func (p *Parser) parseIfExpression() ast.Expression {
+    expression := &ast.IfExpression{Token: p.curToken}
+
+    if !p.expectPeek(token.LPAREN) {
+        return nil
+    }
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
