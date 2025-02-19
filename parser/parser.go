@@ -288,6 +288,13 @@ func (p *Parser) parseIfExpression() ast.Expression {
     if !p.expectPeek(token.LPAREN) {
         return nil
     }
+
+    p.nextToken()
+    expression.Condition = p.parseExpression(LOWEST)
+
+    if !p.expectPeek(token.RPAREN) {
+        return nil
+    }
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
