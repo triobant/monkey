@@ -305,6 +305,9 @@ func (p *Parser) parseIfExpression() ast.Expression {
     return expression
 }
 
+func (p *Parser) parseBlockStatement() *ast.BlockStatement {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
