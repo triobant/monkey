@@ -299,6 +299,10 @@ func (p *Parser) parseIfExpression() ast.Expression {
     if !p.expectPeek(token.LBRACE) {
         return nil
     }
+
+    expression.Consequence = p.parseBlockStatement()
+
+    return expression
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
