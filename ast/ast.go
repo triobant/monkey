@@ -220,3 +220,5 @@ type FunctionLiteral struct {
     Parameters  []*Identifier
     Body        *BlockStatement
 }
+
+func (fl *FunctionLiteral) expressionNode()     {}
