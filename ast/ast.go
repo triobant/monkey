@@ -222,3 +222,4 @@ type FunctionLiteral struct {
 }
 
 func (fl *FunctionLiteral) expressionNode()     {}
+func (fl *FunctionLiteral) TokenLiteral() string { return fl.Token.Literal }
