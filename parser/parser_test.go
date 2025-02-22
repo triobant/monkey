@@ -498,6 +498,12 @@ func TestIfElseExpression(t *testing.T) {
 }
 
 func TestFunctionLiteral(t *testing.T) {
+    input := `fn(x, y) { x + y; }`
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
