@@ -515,6 +515,12 @@ func TestFunctionLiteral(t *testing.T) {
         t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%T",
             program.Statements[0])
     }
+
+    function, ok := stmt.Expression.(*ast.FunctionLiteral)
+    if !ok {
+        t.Fatalf("stmt.Expression is not ast.FunctionLiteral. got=%T",
+            stmt.Expression)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
