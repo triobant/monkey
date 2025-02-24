@@ -529,6 +529,11 @@ func TestFunctionLiteral(t *testing.T) {
 
     testLiteralExpression(t, function.Parameters[0], "x")
     testLiteralExpression(t, function.Parameters[1], "y")
+
+    if len(function.Body.Statements) != 1 {
+        t.Fatalf("function.Body.Statements has not 1 statements. got=%d\n",
+            len(function.Body.Statements))
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
