@@ -526,6 +526,9 @@ func TestFunctionLiteral(t *testing.T) {
         t.Fatalf("function literal parameters wrong. want 2, got=%d\n",
             len(function.Parameters))
     }
+
+    testLiteralExpression(t, function.Parameters[0], "x")
+    testLiteralExpression(t, function.Parameters[1], "y")
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
