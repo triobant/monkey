@@ -534,6 +534,12 @@ func TestFunctionLiteral(t *testing.T) {
         t.Fatalf("function.Body.Statements has not 1 statements. got=%d\n",
             len(function.Body.Statements))
     }
+
+    bodyStmt, ok := function.Body.Statements[0].(*ast.ExpressionStatement)
+    if !ok {
+        t.Fatalf("function body stmt is not ast.ExpressionStatements. got=%T",
+            function.Body.Statements[0])
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
