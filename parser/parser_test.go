@@ -540,6 +540,8 @@ func TestFunctionLiteral(t *testing.T) {
         t.Fatalf("function body stmt is not ast.ExpressionStatements. got=%T",
             function.Body.Statements[0])
     }
+
+    testInfixExpression(t, bodyStmt.Expression, "x", "+", "y")
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
