@@ -342,6 +342,12 @@ func (p *Parser) parseFunctionLiteral() ast.Expression {
 
     lit.Parameters = p.parseFunctionParameters()
 
+    if !p.expectPeek(token.LBRACE) {
+        return nil
+    }
+
+    lit.Body = p.parseBlockStatement()
+
     return lit
 }
 
