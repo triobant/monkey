@@ -351,6 +351,9 @@ func (p *Parser) parseFunctionLiteral() ast.Expression {
     return lit
 }
 
+func (p *Parser) parseFunctionParameters() []*ast.Identifier {
+}
+
 func (p *Parser) curTokenIs(t token.TokenType) bool {
     return p.curToken.Type == t
 }
