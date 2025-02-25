@@ -334,6 +334,9 @@ func (p *Parser) parseBlockStatement() *ast.BlockStatement {
 }
 
 func (p *Parser) parseFunctionLiteral() ast.Expression {
+    lit := &ast.FunctionLiteral{Token: p.curToken}
+    lit.Parameters = p.parseFunctionParameters()
+    return lit
 }
 
 func (p *Parser) curTokenIs(t token.TokenType) bool {
