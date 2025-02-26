@@ -545,6 +545,14 @@ func TestFunctionLiteral(t *testing.T) {
 }
 
 func TestFunctionParameterParsing(t *testing.T) {
+    tests := []struct {
+        input           string
+        expectedParams  []string
+    }{
+        {input: "fn() {};", expectedParams: []string{}},
+        {input: "fn(x) {};", expectedParams: []string{"x"}},
+        {input: "fn(x, y, z) {};", expectedParams: []string{"x", "y", "z"}},
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
