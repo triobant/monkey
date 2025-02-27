@@ -567,6 +567,10 @@ func TestFunctionParameterParsing(t *testing.T) {
             t.Errorf("length parameters wrong. want %d, got=%d\n",
                 len(tt.expectedParams), len(function.Parameters))
         }
+
+        for i, ident := range tt.expectedParams {
+            testLiteralExpression(t, function.Parameters[i], ident)
+        }
     }
 }
 
