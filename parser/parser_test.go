@@ -562,6 +562,11 @@ func TestFunctionParameterParsing(t *testing.T) {
 
         stmt := program.Statements[0].(*ast.ExpressionStatement)
         function := stmt.Expression.(*ast.FunctionLiteral)
+
+        if len(function.Parameters) != len(tt.expectedParams) {
+            t.Errorf("length parameters wrong. want %d, got=%d\n",
+                len(tt.expectedParams), len(function.Parameters))
+        }
     }
 }
 
