@@ -1,10 +1,10 @@
 package parser
 
 import (
+    "fmt"
     "monkey/ast"
     "monkey/lexer"
     "monkey/token"
-    "fmt"
     "strconv"
 )
 
@@ -80,10 +80,6 @@ func New(l *lexer.Lexer) *Parser {
     return p
 }
 
-func (p *Parser) Errors() []string {
-    return p.errors
-}
-
 func (p *Parser) peekError(t token.TokenType) {
     msg := fmt.Sprintf("expected next token to be %s, got %s instead",
         t, p.peekToken.Type)
@@ -93,6 +89,10 @@ func (p *Parser) peekError(t token.TokenType) {
 func (p *Parser) nextToken() {
     p.curToken = p.peekToken
     p.peekToken = p.l.NextToken()
+}
+
+func (p *Parser) Errors() []string {
+    return p.errors
 }
 
 func (p *Parser) ParseProgram() *ast.Program {
