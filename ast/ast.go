@@ -246,3 +246,5 @@ type CallExpression struct {
     Function    Expression // Identifier or FunctionLiteral
     Arguments   []Expression
 }
+
+func (ce *CallExpression) expressionNode()  {}
