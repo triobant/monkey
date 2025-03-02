@@ -602,6 +602,18 @@ func TestCallExpressionParsing(t *testing.T) {
         t.Fatalf("stmt.Expression is not ast.CallExpression. got=%T",
             stmt.Expression)
     }
+
+    if !testIdentifier(t, exp.Function, "add") {
+        return
+    }
+
+    if len(exp.Arguments) != 3 {
+        t.Fatalf("wrong length of arguments. got=%d", len(exp.Arguments))
+    }
+
+    testLiteralExpression(t, exp.Arguments[0], 1)
+    testInfixExpression(t, exp.Arguments[1], 2, "*", 3)
+    testInfixExpression(t, exp.Arguments[2], 4, "+", 5)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
