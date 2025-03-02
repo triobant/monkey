@@ -596,6 +596,12 @@ func TestCallExpressionParsing(t *testing.T) {
         t.Fatalf("stmt is not ast.ExpressionStatement. got=%T",
             stmt.Expression)
     }
+
+    exp, ok := stmt.Expression.(*ast.CallExpression)
+    if !ok {
+        t.Fatalf("stmt.Expression is not ast.CallExpression. got=%T",
+            stmt.Expression)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
