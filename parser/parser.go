@@ -398,6 +398,9 @@ func (p *Parser) parseFunctionParameters() []*ast.Identifier {
     return identifiers
 }
 
+func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
+}
+
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
     p.prefixParseFns[tokenType] = fn
 }
