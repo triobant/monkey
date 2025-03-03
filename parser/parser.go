@@ -404,6 +404,9 @@ func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
     return exp
 }
 
+func (p *Parser) parseCallArguments() []ast.Expression {
+}
+
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
     p.prefixParseFns[tokenType] = fn
 }
