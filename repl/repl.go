@@ -47,3 +47,6 @@ const MONKEY_FACE = `            __,__
         '._ '-=-' _.'
            '-----'
 `
+
+func printParserErrors(out io.Writer, errors []string) {
+}
