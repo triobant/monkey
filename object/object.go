@@ -1,5 +1,7 @@
 package object
 
+import "fmt"
+
 type ObjectType string
 
 type Object interface {
