@@ -8,3 +8,7 @@ type Object interface {
     Type()      ObjectType
     Inspect()   String
 }
+
+type Integer struct {
+    Value       int64
+}
