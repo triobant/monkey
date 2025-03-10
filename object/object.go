@@ -19,3 +19,7 @@ type Integer struct {
 }
 
 func (i *Integer) Type() ObjectType { return INTEGER_OBJ }
+
+type Boolean struct {
+    Value       bool
+}
