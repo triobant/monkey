@@ -23,3 +23,5 @@ func (i *Integer) Type() ObjectType { return INTEGER_OBJ }
 type Boolean struct {
     Value       bool
 }
+
+func (b *Boolean) Type() ObjectType { return BOOLEAN_OBJ }
