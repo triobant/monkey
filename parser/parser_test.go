@@ -644,6 +644,13 @@ func TestCallExpressionParameterParsing(t *testing.T) {
         p := New(l)
         program := p.ParseProgram()
         checkParserErrors(t, p)
+
+        stmt := program.Statements[0].(*ast.ExpressionStatement)
+        exp, ok := stmt.Expression.(*ast.CallExpression)
+        if !ok {
+            t.Fatalf("stmt.Expression is not ast.CallExpression. got=%T",
+                stmt.Expression)
+        }
     }
 }
 
