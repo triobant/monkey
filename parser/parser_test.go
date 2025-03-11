@@ -660,6 +660,13 @@ func TestCallExpressionParameterParsing(t *testing.T) {
             t.Fatalf("wrong number of arguments. want=%d, got=%d",
                 len(tt.expectedArgs), len(exp.Arguments))
         }
+
+        for i, arg := range tt.expectedArgs {
+            if exp.Arguments[i].String() != arg {
+                t.Errorf("argument %d wrong. want=%q, got=%q", i,
+                    arg, exp.Arguments[i].String())
+            }
+        }
     }
 }
 
