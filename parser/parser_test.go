@@ -651,6 +651,10 @@ func TestCallExpressionParameterParsing(t *testing.T) {
             t.Fatalf("stmt.Expression is not ast.CallExpression. got=%T",
                 stmt.Expression)
         }
+
+        if !testIdentifier(t, exp.Function, tt.expectedIdent) {
+            return
+        }
     }
 }
 
