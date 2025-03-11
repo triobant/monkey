@@ -655,6 +655,11 @@ func TestCallExpressionParameterParsing(t *testing.T) {
         if !testIdentifier(t, exp.Function, tt.expectedIdent) {
             return
         }
+
+        if len(exp.Arguments) != len(tt.expectedArgs) {
+            t.Fatalf("wrong number of arguments. want=%d, got=%d",
+                len(tt.expectedArgs), len(exp.Arguments))
+        }
     }
 }
 
