@@ -617,6 +617,27 @@ func TestCallExpressionParsing(t *testing.T) {
 }
 
 func TestCallExpressionParameterParsing(t *testing.T) {
+    tests := []struct {
+        input           string
+        expectedIdent   string
+        expectedArgs    []string
+    }{
+        {
+            input:          "add();",
+            expectedIdent:  "add",
+            expectedArgs:   []string{},
+        },
+        {
+            input:          "add(1);",
+            expectedIdent:  "add",
+            expectedArgs:   []string{"1"},
+        },
+        {
+            input:          "add(1, 2 * 3, 4 + 5);",
+            expectedIdent:  "add",
+            expectedArgs:   []string{"1", "(2 * 3)", "(4 + 5)"},
+        },
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
