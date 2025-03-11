@@ -616,6 +616,9 @@ func TestCallExpressionParsing(t *testing.T) {
     testInfixExpression(t, exp.Arguments[2], 4, "+", 5)
 }
 
+func TestCallExpressionParameterParsing(t *testing.T) {
+}
+
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
     if s.TokenLiteral() != "let" {
         t.Errorf("s.TokenLiteral not 'let'. got=%q", s.TokenLiteral())
