@@ -638,6 +638,13 @@ func TestCallExpressionParameterParsing(t *testing.T) {
             expectedArgs:   []string{"1", "(2 * 3)", "(4 + 5)"},
         },
     }
+
+    for _, tt := range tests {
+        l := lexer.New(tt.input)
+        p := New(l)
+        program := p.ParseProgram()
+        checkParserErrors(t, p)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
