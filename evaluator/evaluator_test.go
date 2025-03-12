@@ -6,3 +6,6 @@ import (
     "monkey/parser"
     "testing"
 )
+
+func TestEvalIntegerExpression(t *testing.T) {
+}
