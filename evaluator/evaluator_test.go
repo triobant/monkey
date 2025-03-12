@@ -21,3 +21,6 @@ func TestEvalIntegerExpression(t *testing.T) {
         testIntegerObject(t, evaluated, tt.expected)
     }
 }
+
+func testEval(input string) object.Object {
+}
