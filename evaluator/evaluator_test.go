@@ -59,3 +59,6 @@ func testIntegerObject(t *testing.T, obj object.Object, expected int64) bool {
 
     return true
 }
+
+func testBooleanObject(t *testing.T, obj object.Object, expected bool) bool {
+}
