@@ -5,6 +5,11 @@ import (
     "monkey/object"
 )
 
+var (
+    TRUE  = &object.Boolean{Value: true}
+    FALSE = &object.Boolean{Value: false}
+)
+
 func Eval(node ast.Node) object.Object {
     switch node := node.(type) {
 
