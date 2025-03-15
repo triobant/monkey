@@ -6,6 +6,7 @@ import (
     "io"
     "monkey/lexer"
     "monkey/parser"
+    "monkey/evaluator"
 )
 
 const PROMPT = ">>"
