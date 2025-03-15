@@ -61,4 +61,9 @@ func testIntegerObject(t *testing.T, obj object.Object, expected int64) bool {
 }
 
 func testBooleanObject(t *testing.T, obj object.Object, expected bool) bool {
+    result, ok := obj.(*object.Boolean)
+    if !ok {
+        t.Errorf("object is not Boolean. got=%T (%+v)", obj, obj)
+        return false
+    }
 }
