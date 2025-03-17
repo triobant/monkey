@@ -49,6 +49,11 @@ func TestBangOperator(t *testing.T) {
         {"!!false", false},
         {"!!5", true},
     }
+
+    for _, tt := range tests {
+        evaluated := testEval(tt.input)
+        testBooleanObject(t, evaluated, tt.expected)
+    }
 }
 
 func testEval(input string) object.Object {
