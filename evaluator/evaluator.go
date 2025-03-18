@@ -52,3 +52,6 @@ func nativeBoolToBooleanObject(input bool) *object.Boolean {
     }
     return FALSE
 }
+
+func evalPrefixExpression(operator string, right object.Object) object.Object {
+}
