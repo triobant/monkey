@@ -61,3 +61,6 @@ func evalPrefixExpression(operator string, right object.Object) object.Object {
         return NULL
     }
 }
+
+func evalBangOperatorExpression(right object.Object) object.Object {
+}
