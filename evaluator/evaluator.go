@@ -76,3 +76,6 @@ func evalBangOperatorExpression(right object.Object) object.Object {
         return FALSE
     }
 }
+
+func evalMinusPrefixOperatorExpression(right object.Object) object.Object {
+}
