@@ -91,3 +91,9 @@ func evalMinusPrefixOperatorExpression(right object.Object) object.Object {
     value := right.(*object.Integer).Value
     return &object.Integer{Value: -value}
 }
+
+func evalInfixExpression(
+    operator string,
+    left, right object.Object,
+) object.Object {
+}
