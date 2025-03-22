@@ -100,3 +100,6 @@ func evalInfixExpression(operator string, left, right object.Object) object.Obje
         return NULL
     }
 }
+
+func evalIntegerInfixExpression(operator string, left, right object.Object) object.Object {
+}
