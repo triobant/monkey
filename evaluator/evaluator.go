@@ -133,3 +133,6 @@ func evalIntegerInfixExpression(operator string, left, right object.Object) obje
         return NULL
     }
 }
+
+func evalIfExpression(ie *ast.IfExpression) object.Object {
+}
