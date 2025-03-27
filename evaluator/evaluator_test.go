@@ -111,6 +111,9 @@ func TestIfElseExpressions(t *testing.T) {
     }
 }
 
+func TestReturnStatements(t *testing.T) {
+}
+
 func testEval(input string) object.Object {
     l := lexer.New(input)
     p := parser.New(l)
