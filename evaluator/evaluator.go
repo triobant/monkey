@@ -166,3 +166,6 @@ func isTruthy(obj object.Object) bool {
         return true
     }
 }
+
+func evalBlockStatements(block *ast.BlockStatement) object.Object {
+}
