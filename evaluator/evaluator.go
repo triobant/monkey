@@ -22,7 +22,7 @@ func Eval(node ast.Node) object.Object {
         return Eval(node.Expression)
 
     case *ast.BlockStatement:
-        return evalStatements(node.Statements)
+        return evalBlockStatement(node)
 
     case *ast.ReturnStatement:
         val := Eval(node.ReturnValue)
@@ -167,5 +167,5 @@ func isTruthy(obj object.Object) bool {
     }
 }
 
-func evalBlockStatements(block *ast.BlockStatement) object.Object {
+func evalBlockStatement(block *ast.BlockStatement) object.Object {
 }
