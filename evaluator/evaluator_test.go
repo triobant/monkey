@@ -112,7 +112,7 @@ func TestIfElseExpressions(t *testing.T) {
 }
 
 func TestReturnStatements(t *testing.T) {
-    tests := struct {
+    tests := []struct {
         input       string
         expected    int64
     }{
