@@ -46,3 +46,5 @@ func (rv *ReturnValue) Inspect() string  { return rv.Value.Inspect() }
 type Error struct {
     Message     string
 }
+
+func (e *Error) Type() ObjectType { return ERROR_OBJ }
