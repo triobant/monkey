@@ -182,6 +182,22 @@ if (10 > 1) {
             "unknown operator: BOOLEAN + BOOLEAN",
         },
     }
+
+    for _, tt := range tests {
+        evaluated := testEval(tt.input)
+
+        errObj, ok := evaluated.(*object.Error)
+        if !ok {
+            t.Errorf("no error object returned. got=%T(%+v)",
+                evaluated, evaluated)
+            continue
+        }
+
+        if errObj.Message != tt.expectedMessage {
+            t.Errorf("wrong error message. expected=%q, got=%q",
+                tt.expectedMessage, errObj.Message)
+        }
+    }
 }
 
 func testEval(input string) object.Object {
