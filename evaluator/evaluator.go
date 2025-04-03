@@ -181,3 +181,6 @@ func evalBlockStatement(block *ast.BlockStatement) object.Object {
 
     return result
 }
+
+func newError(format string, a ...interface{}) *object.Error {
+}
