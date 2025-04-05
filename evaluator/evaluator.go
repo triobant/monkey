@@ -202,3 +202,6 @@ func evalBlockStatement(block *ast.BlockStatement) object.Object {
 func newError(format string, a ...interface{}) *object.Error {
     return &object.Error{Message: fmt.Sprintf(format, a...)}
 }
+
+func isError(obj object.Object) bool {
+}
