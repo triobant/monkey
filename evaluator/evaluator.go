@@ -204,4 +204,9 @@ func newError(format string, a ...interface{}) *object.Error {
 }
 
 func isError(obj object.Object) bool {
+    if obj != nil {
+        return obj.Type() == object.ERROR_OBJ
+    }
+
+    return false
 }
