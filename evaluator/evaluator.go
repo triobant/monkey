@@ -27,6 +27,9 @@ func Eval(node ast.Node) object.Object {
 
     case *ast.ReturnStatement:
         val := Eval(node.ReturnValue)
+        if isError(val) {
+            return val
+        }
         return &object.ReturnValue{Value: val}
 
     // Expressions
