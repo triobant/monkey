@@ -210,6 +210,10 @@ func TestLetStatements(t *testing.T) {
         {"let a = 5; let b = a; b;"" 5},
         {"let a = 5; let b = a; let c = a + b + 5; c;" 15},
     }
+
+    for _, tt := range tests {
+        testIntegerObject(t, testEval(tt.input), tt.expected)
+    }
 }
 
 func testEval(input string) object.Object {
