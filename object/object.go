@@ -58,3 +58,8 @@ func NewEnvironment() *Environment {
 type Environment struct {
     store map[string]Object
 }
+
+func (e *Environment) Get(name strong) (Object, bool) {
+    obj, ok := e.store[name]
+    return obj, ok
+}
