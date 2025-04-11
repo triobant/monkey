@@ -33,10 +33,11 @@ func Eval(node ast.Node) object.Object {
         return &object.ReturnValue{Value: val}
 
     case *ast.LetStatement:
-        val := Eval(node.Value)
+        val := Eval(node.Value, env)
         if isError(val) {
             return val
         }
+        env.Set(node.Name.Value, val)
 
     // Expressions
     case *ast.IntegerLiteral:
