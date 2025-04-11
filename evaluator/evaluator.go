@@ -64,7 +64,11 @@ func Eval(node ast.Node) object.Object {
         }
         return evalInfixExpression(node.Operator, left, right)
 
+    case *ast.Identifier:
+        return evalIdentifier(node, env)
+
     }
+
 
     return nil
 }
