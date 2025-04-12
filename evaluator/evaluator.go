@@ -76,7 +76,7 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
 func evalProgram(program *ast.Program) object.Object {
     var result object.Object
 
-    for _, statement := range program.Statements{
+    for _, statement := range program.Statements {
         result = Eval(statement)
 
         switch result := result.(type) {
