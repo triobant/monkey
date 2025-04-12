@@ -152,7 +152,7 @@ func evalInfixExpression(
 
 func evalIntegerInfixExpression(
     operator string,
-    left, right object.Object
+    left, right object.Object,
 ) object.Object {
     leftVal := left.(*object.Integer).Value
     rightVal := right.(*object.Integer).Value
