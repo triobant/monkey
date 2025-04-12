@@ -238,7 +238,7 @@ func isError(obj object.Object) bool {
 }
 
 func evalIdentifier(
-    node *ast.Identifier
+    node *ast.Identifier,
     env *object.Environment,
 ) object.Object {
     val, ok := env.Get(node.Value)
