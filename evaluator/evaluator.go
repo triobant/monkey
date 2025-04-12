@@ -236,3 +236,9 @@ func isError(obj object.Object) bool {
 
     return false
 }
+
+func evalIdentifier(
+    node *ast.Identifier
+    env *object.Environment,
+) object.Object {
+}
