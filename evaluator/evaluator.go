@@ -12,7 +12,7 @@ var (
     FALSE = &object.Boolean{Value: false}
 )
 
-func Eval(node ast.Node) object.Object {
+func Eval(node ast.Node, env *object.Environment) object.Object {
     switch node := node.(type) {
 
     // Statements
