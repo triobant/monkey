@@ -1,6 +1,7 @@
 package object
 
 import (
+    "bytes"
     "fmt"
     "monkey/ast"
     "strings"
