@@ -1,6 +1,10 @@
 package object
 
-import "fmt"
+import (
+    "fmt"
+    "monkey/ast"
+    "strings"
+)
 
 type ObjectType string
 
