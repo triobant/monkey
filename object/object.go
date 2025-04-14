@@ -74,3 +74,9 @@ func (e *Environment) Set(name string, val Object) Object {
     e.store[name] = val
     return val
 }
+
+type Function struct {
+    Parameters  []*ast.Identifier
+    Body        *ast.BlockStatement
+    Env         *Environment
+}
