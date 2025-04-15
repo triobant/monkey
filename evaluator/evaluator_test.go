@@ -221,6 +221,10 @@ func TestLetStatements(t *testing.T) {
 }
 
 func TestFunctionObject(t *testing.T) {
+    input := "fn(x) { x + 2; };"
+    evaluated := testEval(inpt)
+    fn , ok := evaluated.(*object.Function)
+
 }
 
 func testEval(input string) object.Object {
