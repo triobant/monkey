@@ -232,6 +232,10 @@ func TestFunctionObject(t *testing.T) {
         t.Fatalf("function has wrong parameters. Parameters=%+v",
             fn.Parameters)
     }
+
+    if fn.Parameters[0].String() != "x" {
+        t.Fatalf("parameter is not 'x'. got=%q", fn.Parameters[0])
+    }
 }
 
 func testEval(input string) object.Object {
