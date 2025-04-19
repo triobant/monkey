@@ -269,3 +269,9 @@ func evalIdentifier(
 
     return val
 }
+
+func evalExpressions(
+    exps    []ast.Expression,
+    env     *object.Environment,
+) []object.Object {
+}
