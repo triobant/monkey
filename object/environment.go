@@ -5,3 +5,6 @@ func NewEnclosedEnvironment(outer *Environment) *Environment {
     env.outer = outer
     return env
 }
+
+func NewEnvironment() *Environment {
+}
