@@ -10,3 +10,8 @@ func NewEnvironment() *Environment {
     s := make(map[string]Object)
     return &Environment{store: s, outer: nil}
 }
+
+type Environment struct {
+    store map[string]Object
+    outer *Environment
+}
