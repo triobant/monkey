@@ -15,3 +15,6 @@ type Environment struct {
     store map[string]Object
     outer *Environment
 }
+
+func (e *Environment) Get(name string) (Object, bool) {
+}
