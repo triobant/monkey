@@ -288,3 +288,6 @@ func evalExpressions(
 
     return result
 }
+
+func applyFunction(fn object.Object, args []object.Object) object.Object {
+}
