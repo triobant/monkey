@@ -290,4 +290,12 @@ func evalExpressions(
 }
 
 func applyFunction(fn object.Object, args []object.Object) object.Object {
+    function, ok := fn.(*object.Function)
+    if !ok {
+        return newError("not a function: %s", fn.Type())
+    }
+
+    extendedEnv := extendFunctionEnv(function, args)
+    evaluated := Eval(function.Body, extendedEnv)
+    return unwrapReturnValue(evaluated)
 }
