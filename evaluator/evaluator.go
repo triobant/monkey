@@ -312,3 +312,6 @@ func extendFunctionEnv(
 
     return env
 }
+
+func unwrapReturnValue(obj object.Object) object.Object {
+}
