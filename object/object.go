@@ -66,7 +66,7 @@ func (f *Function) Type() ObjectType { return FUNCTION_OBJ }
 func (f *Function) Inspect() string {
     var out bytes.Buffer
 
-    params := []strings{}
+    params := []string{}
     for _, p := range f.Parameters {
         params = append(params, p.String())
     }
