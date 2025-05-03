@@ -182,6 +182,10 @@ func TestErrorHandling(t *testing.T) {
             "unknown operator: BOOLEAN + BOOLEAN",
         },
         {
+            "true + false + true + false;",
+            "unknown operator: BOOLEAN + BOOLEAN",
+        },
+        {
             "5; true + false; 5",
             "unknown operator: BOOLEAN + BOOLEAN",
         },
@@ -242,6 +246,7 @@ func TestLetStatements(t *testing.T) {
 
 func TestFunctionObject(t *testing.T) {
     input := "fn(x) { x + 2; };"
+
     evaluated := testEval(input)
     fn , ok := evaluated.(*object.Function)
     if !ok {
