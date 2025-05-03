@@ -120,6 +120,7 @@ func TestReturnStatements(t *testing.T) {
         {"return 10; 9;", 10},
         {"return 2 * 5; 9;", 10},
         {"9; return 2 * 5; 9;", 10},
+        {"if (10 > 1) { return 10; }", 10},
         {
             `
 if (10 > 1) {
