@@ -287,6 +287,9 @@ func TestFunctionApplication(t *testing.T) {
     }
 }
 
+func TestEnclosingEnvironments(t *testing.T) {
+}
+
 func TestClosures(t *testing.T) {
     input := `
 let newAdder = fn(x) {
