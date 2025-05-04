@@ -288,6 +288,20 @@ func TestFunctionApplication(t *testing.T) {
 }
 
 func TestEnclosingEnvironments(t *testing.T) {
+    	input := `
+let first = 10;
+let second = 10;
+let third = 10;
+
+let ourFunction = fn(first) {
+  let second = 20;
+
+  first + second + third;
+};
+
+ourFunction(20) + first + second;`
+
+    testIntegerObject(t, testEval(input), 70)
 }
 
 func TestClosures(t *testing.T) {
