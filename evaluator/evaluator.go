@@ -215,19 +215,6 @@ func evalIfExpression(
     }
 }
 
-func isTruthy(obj object.Object) bool {
-    switch obj {
-    case NULL:
-        return false
-    case TRUE:
-        return true
-    case FALSE:
-        return false
-    default:
-        return true
-    }
-}
-
 func evalBlockStatement(
     block *ast.BlockStatement,
     env *object.Environment,
@@ -258,6 +245,19 @@ func evalIdentifier(
     }
 
     return val
+}
+
+func isTruthy(obj object.Object) bool {
+    switch obj {
+    case NULL:
+        return false
+    case TRUE:
+        return true
+    case FALSE:
+        return false
+    default:
+        return true
+    }
 }
 
 func newError(format string, a ...interface{}) *object.Error {
