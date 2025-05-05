@@ -248,18 +248,6 @@ func evalBlockStatement(
     return result
 }
 
-func newError(format string, a ...interface{}) *object.Error {
-    return &object.Error{Message: fmt.Sprintf(format, a...)}
-}
-
-func isError(obj object.Object) bool {
-    if obj != nil {
-        return obj.Type() == object.ERROR_OBJ
-    }
-
-    return false
-}
-
 func evalIdentifier(
     node *ast.Identifier,
     env *object.Environment,
@@ -270,6 +258,18 @@ func evalIdentifier(
     }
 
     return val
+}
+
+func newError(format string, a ...interface{}) *object.Error {
+    return &object.Error{Message: fmt.Sprintf(format, a...)}
+}
+
+func isError(obj object.Object) bool {
+    if obj != nil {
+        return obj.Type() == object.ERROR_OBJ
+    }
+
+    return false
 }
 
 func evalExpressions(
