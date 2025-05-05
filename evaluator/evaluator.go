@@ -58,11 +58,16 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
         if isError(left) {
             return left
         }
+
         right := Eval(node.Right, env)
         if isError(right) {
             return right
         }
+
         return evalInfixExpression(node.Operator, left, right)
+
+    case *ast.IfExpression:
+        return evalIfExpression(node, env)
 
     case *ast.Identifier:
         return evalIdentifier(node, env)
@@ -85,7 +90,6 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
         return applyFunction(function, args)
 
     }
-
 
     return nil
 }
