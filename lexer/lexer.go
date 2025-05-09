@@ -131,6 +131,14 @@ func (l *Lexer) readNumber() string {
 }
 
 func (l *Lexer) readString() string {
+    position := l.position + 1
+    for {
+        l.readChar()
+        if l.ch == '"' || l.ch == 0 {
+            break
+        }
+    }
+    return l.input[position:l.position]
 }
 
 // Checks if given arg is a letter or _ ; other languages allow even ? and ! in identifiers
