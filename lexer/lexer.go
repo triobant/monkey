@@ -130,6 +130,9 @@ func (l *Lexer) readNumber() string {
     return l.input[position:l.position]
 }
 
+func (l *Lexer) readString() string {
+}
+
 // Checks if given arg is a letter or _ ; other languages allow even ? and ! in identifiers
 // Changing this function has a large impact on the language
 func isLetter(ch byte) bool {
