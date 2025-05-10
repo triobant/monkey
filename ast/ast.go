@@ -264,3 +264,8 @@ func (ce *CallExpression) String() string {
 
     return out.String()
 }
+
+type StringLiteral struct {
+    Token   token.Token
+    Value   string
+}
