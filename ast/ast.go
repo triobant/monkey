@@ -269,3 +269,5 @@ type StringLiteral struct {
     Token   token.Token
     Value   string
 }
+
+func (sl *StringLiteral) expressionNode()       {}
