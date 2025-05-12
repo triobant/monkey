@@ -671,6 +671,15 @@ func TestCallExpressionParameterParsing(t *testing.T) {
 }
 
 func TestStringLiteralExpression(t *testing.T) {
+    input := `"hello world";`
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
+
+    stmt := program.Statements[0].(*ast.ExpressionStatement)
+    literal, ok := stmt.Expression.(*ast.StringLiteral)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
