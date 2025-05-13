@@ -264,6 +264,9 @@ func (p *Parser) parseIntegerLiteral() ast.Expression {
     return lit
 }
 
+func (p *Parser) parseStringLiteral() ast.Expression {
+}
+
 func (p *Parser) parsePrefixExpression() ast.Expression {
     // tool to understand what the parser does
     // defer untrace(trace("parseExpressionStatement"))
