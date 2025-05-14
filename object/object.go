@@ -81,3 +81,7 @@ func (f *Function) Inspect() string {
 
     return out.String()
 }
+
+type String struct {
+    Value string
+}
