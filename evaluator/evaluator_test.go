@@ -305,6 +305,10 @@ ourFunction(20) + first + second;`
 }
 
 func TestStringLiteral(t *testing.T) {
+    input := `"Hello World!"`
+
+    evaluated := testEval(input)
+    str, ok := evaluated.(*object.String)
 }
 
 func testEval(input string) object.Object {
