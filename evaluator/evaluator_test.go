@@ -319,6 +319,10 @@ func TestStringLiteral(t *testing.T) {
 }
 
 func TestStringConcatenation(t *testing.T) {
+    input := `"Hello" + " " + "World!"`
+
+    evaluated := testEval(input)
+    str, ok := evaluated.(*object.String)
 }
 
 func testEval(input string) object.Object {
