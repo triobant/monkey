@@ -332,9 +332,6 @@ func TestStringConcatenation(t *testing.T) {
     }
 }
 
-func TestErrorHandling(t *testing.T) {
-}
-
 func testEval(input string) object.Object {
     l := lexer.New(input)
     p := parser.New(l)
