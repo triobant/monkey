@@ -226,6 +226,12 @@ func evalIntegerInfixExpression(
     }
 }
 
+func evalStringInfixExpression(
+    operator string,
+    left, right object.Object,
+) object.Object {
+}
+
 func evalIfExpression(
     ie *ast.IfExpression,
     env *object.Environment,
