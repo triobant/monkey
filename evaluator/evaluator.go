@@ -234,6 +234,10 @@ func evalStringInfixExpression(
         return newError("unknown operator: %s %s %s",
             left.Type(), operator, right.Type())
     }
+
+    leftVal := left.(*object.String).Value
+    rightVal := right.(*object.String).Value
+    return &object.String{Value: leftVal + rightVal}
 }
 
 func evalIfExpression(
