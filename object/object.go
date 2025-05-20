@@ -89,3 +89,7 @@ type String struct {
 
 func (s *String) Type() ObjectType { return STRING_OBJ }
 func (s *String) Inspect() string  { return s.Value }
+
+type Builtin struct {
+    Fn BuiltinFunction
+}
