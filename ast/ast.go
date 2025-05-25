@@ -279,4 +279,5 @@ type ArrayLiteral struct {
     Elements    []Expression
 }
 
-func (al *ArrayLiteral) expressionNode()    {}
+func (al *ArrayLiteral) expressionNode()      {}
+func (al *ArrayLiteral) TokenLiteral() string { return al.Token.Literal }
