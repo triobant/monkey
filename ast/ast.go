@@ -278,3 +278,5 @@ type ArrayLiteral struct {
     Token       token.Token // the '[' token
     Elements    []Expression
 }
+
+func (al *ArrayLiteral) expressionNode()    {}
