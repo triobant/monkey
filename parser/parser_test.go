@@ -702,6 +702,10 @@ func TestParsingArrayLiterals(t *testing.T) {
     if !ok {
         t.Fatalf("exp not ast.ArrayLiteral. got=%T", stmt.Expression)
     }
+
+    if len(array.Elements) != 3 {
+        t.Fatalf("len(array.Elements) not 3. got=%d", len(array.Elements))
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
