@@ -690,6 +690,12 @@ func TestStringLiteralExpression(t *testing.T) {
 }
 
 func TestParsingArrayLiterals(t *testing.T) {
+    input := "[1, 2 * 2, 3 + 3]"
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
