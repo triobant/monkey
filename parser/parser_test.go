@@ -696,6 +696,12 @@ func TestParsingArrayLiterals(t *testing.T) {
     p := New(l)
     program := p.ParseProgram()
     checkParserErrors(t, p)
+
+    stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+    array, ok := stmt.Expression.(*ast.ArrayLiteral)
+    if !ok {
+        t.Fatalf("exp not ast.ArrayLiteral. got=%T", stmt.Expression)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
