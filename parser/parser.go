@@ -420,6 +420,11 @@ func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
 }
 
 func (p *Parser) parseArrayLiteral() ast.Expression {
+    array := &ast.ArrayLiteral{Token: p.curToken}
+
+    array.Elements = p.parseExpressionList(token.RBRACKET)
+
+    return array
 }
 
 func (p *Parser) parseCallArguments() []ast.Expression {
