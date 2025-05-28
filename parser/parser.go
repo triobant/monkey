@@ -419,6 +419,9 @@ func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
     return exp
 }
 
+func (p *Parser) parseExpressionList(end token.TokenType) []ast.Expression {
+}
+
 func (p *Parser) parseArrayLiteral() ast.Expression {
     array := &ast.ArrayLiteral{Token: p.curToken}
 
