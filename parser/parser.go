@@ -419,6 +419,9 @@ func (p *Parser) parseCallExpression(function ast.Expression) ast.Expression {
     return exp
 }
 
+func (p *Parser) parseArrayLiteral() ast.Expression {
+}
+
 func (p *Parser) parseCallArguments() []ast.Expression {
     args := []ast.Expression{}
 
