@@ -295,3 +295,9 @@ func (al *ArrayLiteral) String() string {
 
     return out.String()
 }
+
+type IndexExpression struct {
+    Token   token.Token // the [ token
+    Left    Expression
+    Index   Expression
+}
