@@ -301,3 +301,5 @@ type IndexExpression struct {
     Left    Expression
     Index   Expression
 }
+
+func (ie *IndexExpression) expressionNode()     {}
