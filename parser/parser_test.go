@@ -725,6 +725,14 @@ func TestParsingIndexExpression(t *testing.T) {
     if !ok {
         t.Fatalf("exp not *ast.IndexExpression. got=%T", stmt.Expression)
     }
+
+    if !testIdentifier(t, indexExp.Left, "myArray") {
+        return
+    }
+
+    if !testInfixExpression(t, indexExp.Index, 1, "+", 1) {
+        return
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
