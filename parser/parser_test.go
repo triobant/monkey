@@ -719,6 +719,12 @@ func TestParsingIndexExpression(t *testing.T) {
     p := New(l)
     program := p.ParseProgram()
     checkParserErrors(t, p)
+
+    stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+    indexExp, ok := stmt.Expression.(*ast.IndexExpression)
+    if !ok {
+        t.Fatalf("exp not *ast.IndexExpression. got=%T", stmt.Expression)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
