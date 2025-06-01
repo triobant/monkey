@@ -377,6 +377,11 @@ func TestArrayLiterals(t *testing.T) {
     if !ok {
         t.Fatalf("object is not Array. got=%T (%+v)", evaluated, evaluated)
     }
+
+    if len(result.Elements) != 3 {
+        t.Fatalf("array has wrong num of elements. got=%d",
+            len(result.Elements))
+    }
 }
 
 func testEval(input string) object.Object {
