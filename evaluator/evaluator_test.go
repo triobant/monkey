@@ -382,6 +382,10 @@ func TestArrayLiterals(t *testing.T) {
         t.Fatalf("array has wrong num of elements. got=%d",
             len(result.Elements))
     }
+
+    testIntegerObject(t, result.Elements[0], 1)
+    testIntegerObject(t, result.Elements[1], 4)
+    testIntegerObject(t, result.Elements[2], 6)
 }
 
 func testEval(input string) object.Object {
