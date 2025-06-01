@@ -370,6 +370,13 @@ func TestBuiltinFunctions(t *testing.T) {
 }
 
 func TestArrayLiterals(t *testing.T) {
+    input := "[1, 2 * 2, 3 + 3]"
+
+    evaluated := testEval(input)
+    result, ok := evaluated.(*object.Array)
+    if !ok {
+        t.Fatalf("object is not Array. got=%T (%+v)", evaluated, evaluated)
+    }
 }
 
 func testEval(input string) object.Object {
