@@ -366,3 +366,6 @@ func unwrapReturnValue(obj object.Object) object.Object {
 
     return obj
 }
+
+func evalIndexExpression(left, index object.Object) object.Object {
+}
