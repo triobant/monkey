@@ -99,6 +99,13 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
         }
         return &object.Array{Elements: elements}
 
+    case *ast.IndexExpression:
+        left := Eval(node.Left, env)
+        if isError(index) {
+            return index
+        }
+        return evalIndexExpression(left, index)
+
     }
 
     return nil
