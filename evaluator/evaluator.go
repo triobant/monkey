@@ -375,3 +375,6 @@ func evalIndexExpression(left, index object.Object) object.Object {
         return newError("index operator not supported: %s", left.Type())
     }
 }
+
+func evalArrayIndexExpression(array, index object.Object) object.Object {
+}
