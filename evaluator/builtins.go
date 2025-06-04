@@ -23,4 +23,8 @@ var builtins = map[string]*object.Builtin{
             }
         },
     },
+    "first": &object.Builtin{
+        Fn: func(args ...object.Object) object.Object {
+        },
+    },
 }
