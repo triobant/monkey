@@ -42,4 +42,7 @@ var builtins = map[string]*object.Builtin{
             return NULL
         },
     },
+    "last": &object.Builtin{
+		},
+	},
 }
