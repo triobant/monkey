@@ -23,6 +23,10 @@ var builtins = map[string]*object.Builtin{
             }
         },
     },
+    "puts": &object.Builtin{
+		Fn: func(args ...object.Object) object.Object {
+		},
+	},
     "first": &object.Builtin{
         Fn: func(args ...object.Object) object.Object {
             if len(args) != 1 {
