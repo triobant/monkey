@@ -321,4 +321,5 @@ type HashLiteral struct {
     Pairs   map[Expression]Expression
 }
 
-func (hl *HashLiteral) expressionNode()     {}
+func (hl *HashLiteral) expressionNode()      {}
+func (hl *HashLiteral) TokenLiteral() string { return hl.Token.Literal }
