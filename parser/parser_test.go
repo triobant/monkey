@@ -744,6 +744,12 @@ func TestParsingIndexExpression(t *testing.T) {
 }
 
 func TestParsingHashLiteralsStringKeys(t *testing.T) {
+    input := `{"one": 1, "two": 2, "three": 3}`
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
