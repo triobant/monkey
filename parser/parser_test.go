@@ -760,6 +760,23 @@ func TestParsingHashLiteralsStringKeys(t *testing.T) {
     if len(hash.Pairs) != 3 {
         t.Errorf("hash.Pairs has wrong. length. got=%d", len(hash.Pairs))
     }
+
+    expected := map[string]int64{
+        "one":      1,
+        "two":      2,
+        "three":    3,
+    }
+
+    for key, value := range hash.Pairs {
+        literal, ok := key.(*ast.StringLiteral)
+        if !ok {
+            t.Errorf("key is not ast.StringLiteral. got=%T", key)
+        }
+
+        expectedValue := expected[literal.String()]
+
+        testIntegerLiteral(t, value, expectedValue)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
