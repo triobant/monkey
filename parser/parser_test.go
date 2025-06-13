@@ -756,6 +756,10 @@ func TestParsingHashLiteralsStringKeys(t *testing.T) {
     if !ok {
         t.Fatalf("exp is not ast.HashLiteral. got=%T", stmt.Expression)
     }
+
+    if len(hash.Pairs) != 3 {
+        t.Errorf("hash.Pairs has wrong. length. got=%d", len(hash.Pairs))
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
