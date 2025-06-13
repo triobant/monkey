@@ -750,6 +750,12 @@ func TestParsingHashLiteralsStringKeys(t *testing.T) {
     p := New(l)
     program := p.ParseProgram()
     checkParserErrors(t, p)
+
+    stmt := program.Statements[0].(*ast.ExpressionStatement)
+    hash, ok := stmt.Expression.(*ast.HashLiteral)
+    if !ok {
+        t.Fatalf("exp is not ast.HashLiteral. got=%T", stmt.Expression)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
