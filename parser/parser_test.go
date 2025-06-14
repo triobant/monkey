@@ -780,6 +780,12 @@ func TestParsingHashLiteralsStringKeys(t *testing.T) {
 }
 
 func TestParsingEmptyHashLiteral(t *testing.T) {
+    input := "{}"
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
