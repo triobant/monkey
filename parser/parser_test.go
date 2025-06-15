@@ -815,6 +815,18 @@ func TestParsingHashLiteralsWithExpressions(t *testing.T) {
     if len(hash.Pairs) != 3 {
         t.Errorf("hash.Pairs has wrong length. got=%d", len(hash.Pairs))
     }
+
+    tests := map[string]func(ast.Expression){
+        "one": func(e ast.Expression {
+            testInfixExpression(t, e, 0, "+", 1)
+        },
+        "two": func(e ast.Expression {
+            testInfixExpression(t, e, 10, "-", 8)
+        },
+        "three": func(e ast.Expression {
+            testInfixExpression(t, e, 15, "/", 5)
+        },
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
