@@ -827,6 +827,22 @@ func TestParsingHashLiteralsWithExpressions(t *testing.T) {
             testInfixExpression(t, e, 15, "/", 5)
         },
     }
+
+    for key, value := range hash.Pairs {
+        literal, ok := key.(*ast.StringLiteral)
+        if !ok {
+            t.Errorf("key is not ast.StringLiteral. got=%T", key)
+            continue
+        }
+
+        testFunc, ok := tests[literal.String()]
+        if !ok {
+            t.Errorf("No test function for key %q found", literal.String())
+            continue
+        }
+
+        testFunc(value)
+    }
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
