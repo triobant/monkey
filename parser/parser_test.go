@@ -799,6 +799,12 @@ func TestParsingEmptyHashLiteral(t *testing.T) {
 }
 
 func TestParsingHashLiteralsWithExpressions(t *testing.T) {
+    input := `{"one": 0 + 1, "two": 10 - 8, "three": 15 / 5}`
+
+    l := lexer.New(input)
+    p := New(l)
+    program := p.ParseProgram()
+    checkParserErrors(t, p)
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
