@@ -468,6 +468,9 @@ func (p *Parser) parseIndexExpression(left ast.Expression) ast.Expression {
     return exp
 }
 
+func (p *Parser) parseHashLiteral() ast.Expression {
+}
+
 func (p *Parser) parseCallArguments() []ast.Expression {
     args := []ast.Expression{}
 
