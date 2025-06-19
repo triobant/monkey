@@ -471,30 +471,6 @@ func (p *Parser) parseIndexExpression(left ast.Expression) ast.Expression {
 func (p *Parser) parseHashLiteral() ast.Expression {
 }
 
-func (p *Parser) parseCallArguments() []ast.Expression {
-    args := []ast.Expression{}
-
-    if p.peekTokenIs(token.RPAREN) {
-        p.nextToken()
-        return args
-    }
-
-    p.nextToken()
-    args = append(args, p.parseExpression(LOWEST))
-
-    for p.peekTokenIs(token.COMMA) {
-        p.nextToken()
-        p.nextToken()
-        args = append(args, p.parseExpression(LOWEST))
-    }
-
-    if !p.expectPeek(token.RPAREN) {
-        return nil
-    }
-
-    return args
-}
-
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
     p.prefixParseFns[tokenType] = fn
 }
