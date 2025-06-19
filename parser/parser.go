@@ -469,6 +469,8 @@ func (p *Parser) parseIndexExpression(left ast.Expression) ast.Expression {
 }
 
 func (p *Parser) parseHashLiteral() ast.Expression {
+    hash := &ast.HashLiteral{Token: p.curToken}
+    hash.Pairs = make(map[ast.Expression]ast.Expression)
 }
 
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
