@@ -489,6 +489,12 @@ func (p *Parser) parseHashLiteral() ast.Expression {
             return nil
         }
     }
+
+    if !p.expectPeek(token.RBRACE) {
+        return nil
+    }
+
+    return hash
 }
 
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
