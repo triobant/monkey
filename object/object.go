@@ -3,6 +3,7 @@ package object
 import (
     "bytes"
     "fmt"
+    "hash/fnv"
     "monkey/ast"
     "strings"
 )
