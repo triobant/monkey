@@ -122,3 +122,8 @@ func (ao *Array) Inspect() string  {
 
     return out.String()
 }
+
+type HashKey struct {
+    Type    ObjectType
+    Value   uint64
+}
