@@ -139,3 +139,6 @@ func (b *Boolean) HashKey() HashKey {
 
     return HashKey{Type: b.Type(), Value: value}
 }
+
+func (i *Integer) HashKey() HashKey {
+}
