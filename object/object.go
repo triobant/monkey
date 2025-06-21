@@ -141,4 +141,5 @@ func (b *Boolean) HashKey() HashKey {
 }
 
 func (i *Integer) HashKey() HashKey {
+    return HashKey{Type: i.Type(), Value: uint64(i.Value)}
 }
