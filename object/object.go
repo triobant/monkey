@@ -151,3 +151,8 @@ func (s *String) HashKey() HashKey {
 
     return HashKey{Type: s.Type(), Value: h.Sum64()}
 }
+
+type HashPair struct {
+    Key     Object
+    Value   Object
+}
