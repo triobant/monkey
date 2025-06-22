@@ -156,3 +156,7 @@ type HashPair struct {
     Key     Object
     Value   Object
 }
+
+type Hash struct {
+    Pairs map[HashKey]HashPair
+}
