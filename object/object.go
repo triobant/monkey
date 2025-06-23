@@ -160,3 +160,5 @@ type HashPair struct {
 type Hash struct {
     Pairs map[HashKey]HashPair
 }
+
+func (h *Hash) Type() ObjectType { return HASH_OBJ }
