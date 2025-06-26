@@ -446,6 +446,9 @@ func TestArrayIndexExpressions(t *testing.T) {
     }
 }
 
+func TestHashLiterals(t *testing.T) {
+}
+
 func testEval(input string) object.Object {
     l := lexer.New(input)
     p := parser.New(l)
