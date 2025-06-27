@@ -447,6 +447,18 @@ func TestArrayIndexExpressions(t *testing.T) {
 }
 
 func TestHashLiterals(t *testing.T) {
+	input := `let two = "two";
+	{
+	    "one": 10 - 9,
+	    two: 1 + 1,
+	    "thr" + "ee": 6 / 2,
+	    4: 4,
+	    true: 5,
+	    false: 6
+        }`
+
+	evaluated := testEval(input)
+	result, ok := evaluated.(*object.Hash)
 }
 
 func testEval(input string) object.Object {
