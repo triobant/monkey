@@ -478,6 +478,11 @@ func TestHashLiterals(t *testing.T) {
 
 	for expectedKey, expectedValue := range expected {
 	    pair, ok := result.Pairs[expectedKe]
+	    if !ok {
+	        t.Errorf("no pair for given key in Pairs")
+	    }
+
+	    testIntegerObject(t, pair.Value, expectedValue)
 	}
 }
 
