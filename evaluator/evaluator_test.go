@@ -459,6 +459,9 @@ func TestHashLiterals(t *testing.T) {
 
 	evaluated := testEval(input)
 	result, ok := evaluated.(*object.Hash)
+	if !ok {
+	    t.Fatalf("Eval didn't return Hash. got=%T (%+v)", evaluated, evaluated)
+        }
 }
 
 func testEval(input string) object.Object {
