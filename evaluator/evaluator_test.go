@@ -475,6 +475,10 @@ func TestHashLiterals(t *testing.T) {
 	if len(result.Pairs) != len(expected) {
 	    t.Fatalf("Hash has wrong num of pairs. got=%d", len(result.Pairs))
 	}
+
+	for expectedKey, expectedValue := range expected {
+	    pair, ok := result.Pairs[expectedKe]
+	}
 }
 
 func testEval(input string) object.Object {
