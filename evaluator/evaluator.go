@@ -390,3 +390,9 @@ func evalArrayIndexExpression(array, index object.Object) object.Object {
 
     return arrayObject.Elements[idx]
 }
+
+func evalHashLiteral(
+    node *ast.HashLiteral
+    env *object.Environment
+) object.Object {
+}
