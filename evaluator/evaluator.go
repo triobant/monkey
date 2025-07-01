@@ -402,5 +402,10 @@ func evalHashLiteral(
 	if isError(key) {
 	    return key
 	}
+
+	hashKey, ok := key.(object.Hashable)
+	if !ok {
+	    return newError("unusable as hash key: %s", key.Type())
+	}
     }
 }
