@@ -407,5 +407,15 @@ func evalHashLiteral(
 	if !ok {
 	    return newError("unusable as hash key: %s", key.Type())
 	}
+
+	value := Eval(valueNOde, env)
+	if isError(value) {
+	    return value
+        }
+
+	hashed := hashKey.HashKey()
+	pairs[hashed] = object.HashPair{Key: key, Value: value}
     }
+
+    return &object.Hash{Pairs: pairs}
 }
