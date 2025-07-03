@@ -487,6 +487,39 @@ func TestHashLiterals(t *testing.T) {
 }
 
 func TestHashIndexExpressions(t *testing.T) {
+    tests := []struct {
+        input       string
+	expected    interface{}
+    }{
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	},
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	},
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	},
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	},
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	},
+        {
+	    `{"foo": 5}["foo"]`,
+	    5,
+	
+        {
+	    `{false: 5}[false]`,
+	    5,
+	},
+    }
 }
 
 func testEval(input string) object.Object {
