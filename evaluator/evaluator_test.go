@@ -496,23 +496,23 @@ func TestHashIndexExpressions(t *testing.T) {
 	    5,
 	},
         {
-	    `{"foo": 5}["foo"]`,
+	    `{"foo": 5}["bar"]`,
+	    nil,
+	},
+        {
+	    `let key = "foo"; {"foo": 5}[key]`,
 	    5,
 	},
         {
-	    `{"foo": 5}["foo"]`,
+	    `{}["foo"]`,
+	    nil,
+	},
+        {
+	    `{5: 5}[5]`,
 	    5,
 	},
         {
-	    `{"foo": 5}["foo"]`,
-	    5,
-	},
-        {
-	    `{"foo": 5}["foo"]`,
-	    5,
-	},
-        {
-	    `{"foo": 5}["foo"]`,
+	    `{true: 5}[true]`,
 	    5,
 	
         {
