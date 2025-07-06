@@ -213,6 +213,10 @@ if (10 > 1) {
             "foobar",
             "identifier not found: foobar",
         },
+        {
+	    `{"name": "Monkey"}[fn(x) { x }];`,
+	    "unusable as hash key: FUNCTION",
+        },
     }
 
     for _, tt := range tests {
