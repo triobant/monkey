@@ -121,6 +121,12 @@ type String struct {
 
 func (s *String) Type() ObjectType { return STRING_OBJ }
 func (s *String) Inspect() string  { return s.Value }
+func (s *String) HashKey() HashKey {
+    h := fnv.New64a()
+    h.Write([]byte(s.Value))
+
+    return HashKey{Type: s.Type(), Value: h.Sum64()}
+}
 
 type Builtin struct {
     Fn BuiltinFunction
@@ -147,13 +153,6 @@ func (ao *Array) Inspect() string  {
     out.WriteString("]")
 
     return out.String()
-}
-
-func (s *String) HashKey() HashKey {
-    h := fnv.New64a()
-    h.Write([]byte(s.Value))
-
-    return HashKey{Type: s.Type(), Value: h.Sum64()}
 }
 
 type HashPair struct {
