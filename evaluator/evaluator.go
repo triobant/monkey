@@ -421,3 +421,6 @@ func evalHashLiteral(
 
     return &object.Hash{Pairs: pairs}
 }
+
+func evalHashIndexExpression(hash, index object.Object) object.Object {
+}
