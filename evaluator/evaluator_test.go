@@ -518,7 +518,7 @@ func TestHashIndexExpressions(t *testing.T) {
         {
 	    `{true: 5}[true]`,
 	    5,
-	
+        },
         {
 	    `{false: 5}[false]`,
 	    5,
