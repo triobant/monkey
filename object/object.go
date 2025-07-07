@@ -49,6 +49,9 @@ type Integer struct {
 
 func (i *Integer) Type() ObjectType { return INTEGER_OBJ }
 func (i *Integer) Inspect() string  { return fmt.Sprintf("%d", i.Value) }
+func (i *Integer) HashKey() HashKey {
+    return HashKey{Type: i.Type(), Value: uint64(i.Value)}
+}
 
 type Boolean struct {
     Value       bool
@@ -145,10 +148,6 @@ func (b *Boolean) HashKey() HashKey {
     }
 
     return HashKey{Type: b.Type(), Value: value}
-}
-
-func (i *Integer) HashKey() HashKey {
-    return HashKey{Type: i.Type(), Value: uint64(i.Value)}
 }
 
 func (s *String) HashKey() HashKey {
