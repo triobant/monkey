@@ -8,6 +8,8 @@ import (
     "strings"
 )
 
+type BuiltinFunction func(args ...Object) Object
+
 type ObjectType string
 
 const (
