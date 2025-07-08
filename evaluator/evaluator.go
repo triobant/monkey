@@ -105,6 +105,10 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
         if isError(index) {
             return index
         }
+	index := Eval(node.Index, env)
+	if isError(index) {
+	    return index
+	}
         return evalIndexExpression(left, index)
 
     case *ast.HashLiteral:
