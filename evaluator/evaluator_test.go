@@ -481,7 +481,7 @@ func TestHashLiterals(t *testing.T) {
 	}
 
 	for expectedKey, expectedValue := range expected {
-	    pair, ok := result.Pairs[expectedKe]
+	    pair, ok := result.Pairs[expectedKey]
 	    if !ok {
 	        t.Errorf("no pair for given key in Pairs")
 	    }
