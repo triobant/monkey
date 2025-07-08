@@ -350,7 +350,6 @@ func applyFunction(fn object.Object, args []object.Object) object.Object {
     default:
         return newError("not a function: %s", fn.Type())
     }
-
 }
 
 func extendFunctionEnv(
