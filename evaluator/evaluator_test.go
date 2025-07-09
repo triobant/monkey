@@ -387,6 +387,8 @@ func TestBuiltinFunctions(t *testing.T) {
         switch expected := tt.expected.(type) {
         case int:
             testIntegerObject(t, evaluated, int64(expected))
+	case nil:
+	    testNullObject(t, evaluated)
         case string:
             errObj, ok := evaluated.(*object.Error)
             if !ok {
