@@ -217,6 +217,10 @@ if (10 > 1) {
 	    `{"name": "Monkey"}[fn(x) { x }];`,
 	    "unusable as hash key: FUNCTION",
         },
+	{
+	    `999[1]`,
+	    "index operator not supported: INTEGER",
+	},
     }
 
     for _, tt := range tests {
