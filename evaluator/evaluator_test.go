@@ -316,6 +316,9 @@ ourFunction(20) + first + second;`
     testIntegerObject(t, testEval(input), 70)
 }
 
+func TestClosures(t *testing.T) {
+}
+
 func TestStringLiteral(t *testing.T) {
     input := `"Hello World!"`
 
