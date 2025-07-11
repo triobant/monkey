@@ -809,7 +809,7 @@ func TestParsingHashLiteralsWithExpressions(t *testing.T) {
     stmt := program.Statements[0].(*ast.ExpressionStatement)
     hash, ok := stmt.Expression.(*ast.HashLiteral)
     if !ok {
-        t.Fatalf("exp is not ast.HashLiteral. got=%T", len(hash.Pairs))
+        t.Fatalf("exp is not ast.HashLiteral. got=%T", stmt.Expression)
     }
 
     if len(hash.Pairs) != 3 {
