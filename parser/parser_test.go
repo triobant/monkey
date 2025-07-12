@@ -817,13 +817,13 @@ func TestParsingHashLiteralsWithExpressions(t *testing.T) {
     }
 
     tests := map[string]func(ast.Expression){
-        "one": func(e ast.Expression {
+        "one": func(e ast.Expression) {
             testInfixExpression(t, e, 0, "+", 1)
         },
-        "two": func(e ast.Expression {
+        "two": func(e ast.Expression) {
             testInfixExpression(t, e, 10, "-", 8)
         },
-        "three": func(e ast.Expression {
+        "three": func(e ast.Expression) {
             testInfixExpression(t, e, 15, "/", 5)
         },
     }
