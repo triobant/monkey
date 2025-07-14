@@ -397,8 +397,8 @@ func evalArrayIndexExpression(array, index object.Object) object.Object {
 }
 
 func evalHashLiteral(
-    node *ast.HashLiteral
-    env *object.Environment
+    node *ast.HashLiteral,
+    env *object.Environment,
 ) object.Object {
     pairs := make(map[object.HashKey]object.HashPair)
 
