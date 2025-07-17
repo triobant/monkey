@@ -403,7 +403,7 @@ func TestBuiltinFunctions(t *testing.T) {
 	case []int:
 	    array, ok := evaluated.(*object.Array)
 	    if !ok {
-	        t.Errorf("obj not Array. got=%T (%+v)", evluated, evaluated)
+	        t.Errorf("obj not Array. got=%T (%+v)", evaluated, evaluated)
 		continue
 	    }
 
