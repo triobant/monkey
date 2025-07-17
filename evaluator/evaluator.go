@@ -403,7 +403,7 @@ func evalHashLiteral(
     pairs := make(map[object.HashKey]object.HashPair)
 
     for keyNode, valueNode := range node.Pairs {
-        key := Eval(keyNode, nev)
+        key := Eval(keyNode, env)
 	if isError(key) {
 	    return key
 	}
