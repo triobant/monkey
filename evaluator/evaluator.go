@@ -413,7 +413,7 @@ func evalHashLiteral(
 	    return newError("unusable as hash key: %s", key.Type())
 	}
 
-	value := Eval(valueNOde, env)
+	value := Eval(valueNode, env)
 	if isError(value) {
 	    return value
         }
