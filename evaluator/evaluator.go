@@ -430,7 +430,7 @@ func evalHashIndexExpression(hash, index object.Object) object.Object {
 
     key, ok := index.(object.Hashable)
     if !ok {
-        return newError("unsusable as hash key: %s", index.Type())
+        return newError("unusable as hash key: %s", index.Type())
     }
 
     pair, ok := hashObject.Pairs[key.HashKey()]
